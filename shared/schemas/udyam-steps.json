@@ -1,0 +1,62 @@
+{
+  "steps": [
+    {
+      "step": 1,
+      "title": "Aadhaar & OTP Validation",
+      "fields": [
+        {
+          "name": "aadhaar",
+          "label": "Aadhaar Number",
+          "type": "text",
+          "required": true,
+          "pattern": "^[2-9]{1}[0-9]{11}$"
+        },
+        {
+          "name": "mobile",
+          "label": "Mobile Number (linked to Aadhaar)",
+          "type": "tel",
+          "required": true,
+          "pattern": "^[6-9][0-9]{9}$"
+        },
+        {
+          "name": "otp",
+          "label": "OTP",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "PAN Validation",
+      "fields": [
+        {
+          "name": "pan",
+          "label": "PAN Number",
+          "type": "text",
+          "required": true,
+          "pattern": "^[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}$"
+        },
+        {
+          "name": "pincode",
+          "label": "PIN Code",
+          "type": "text",
+          "required": true,
+          "pattern": "^[1-9][0-9]{5}$"
+        },
+        {
+          "name": "state",
+          "label": "State",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "city",
+          "label": "City",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

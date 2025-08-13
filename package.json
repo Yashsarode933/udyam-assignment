@@ -1,0 +1,26 @@
+{
+  "name": "udyam-assignment",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "scraper",
+    "shared"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --workspace=@udyam/frontend run dev",
+    "dev:backend": "npm --workspace=@udyam/backend run dev",
+    "dev": "concurrently -n front,back -c green,blue \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "scrape": "npm --workspace=@udyam/scraper run scrape",
+    "test": "npm -ws run test",
+    "build": "npm run build -w @udyam/frontend && npm run build -w @udyam/backend",
+    "start": "npm run start -w @udyam/backend",
+    "docker:build": "docker build -t udyam-app .",
+    "docker:run": "docker-compose up -d",
+    "docker:stop": "docker-compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
